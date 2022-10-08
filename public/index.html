@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Namaz Vakti API</title>
+    <title>YÖK Tez bilgi çekici</title>
     <link rel="icon" href="favicon.ico" />
-    <script></script>
+    <script>
+      document.getElementById("ara").addEventListener("click", () => {
+        const searchTerm = document.getElementById("inp0").value;
+        const filterTerm = document.getElementById("inp1").value;
+        const xhr = new XMLHttpRequest();
+
+        xhr.open(
+          "GET",
+          `/api/data?searchTerm=${searchTerm}&filterTerm=${filterTerm}`
+        );
+      });
+    </script>
     <style>
       h3 {
         display: inline;
@@ -12,41 +23,11 @@
   </head>
 
   <body>
-    <h1>Namaz Vakti API</h1>
-    <span>
-      Diyanetin sitesindeki verileri kullanarak namaz vakitleri verileri sunar.
-    </span>
-    <br />
-    <br />
-    <b>
-      Ücretsiz, reklamsız,
-      <a target="_blank" href="https://github.com/canbax/namaz-vakti-api">
-        açık kaynak kodlu
-      </a>
-    </b>
-    <br />
-    <br />
-    <a target="_blank" href="https://github.com/canbax/namaz-vakti">
-      <h3>namaz-vakti</h3>
-    </a>
-    uygulaması için oluşturulmuştur
+    <h1>YÖK Tez bilgi çekici</h1>
 
-    <br />
-    <h2>Kullanım</h2>
-    <span>Ülkelerin listesi: </span>
-    <a target="_blank" href="/api/countries"> /api/countries </a>
-    <br />
-    <span>Şehirlerin/Eyaletlerin listesi: </span>
-    <a target="_blank" href="/api/cities?country=33">
-      /api/cities?country=33
-    </a>
-    <br />
-    <span>İlçelerin/Bölgelerin listesi: </span>
-    <a target="_blank" href="/api/regions?country=2&city=503">
-      /api/regions?country=2&city=503
-    </a>
-    <br />
-    Vakit verileri:
-    <a target="_blank" href="/api/data?region=9541"> /api/data?region=9541 </a>
+    <input id="inp0" placeholder="arama terimi" />
+    <input id="inp1" placeholder="filtreleme terimi" />
+
+    <button id="ara"></button>
   </body>
 </html>

@@ -8,6 +8,7 @@ context("Actions", () => {
 
   let table = [];
   const tableCols = [
+    "No",
     "Thesis No",
     "Author",
     "Year",

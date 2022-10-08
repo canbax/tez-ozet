@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy": "cypress open"
+    "cy": "cypress open",
+    "sum": "cypress run --headless --browser chrome"
   },
   "keywords": [],
   "author": "",
